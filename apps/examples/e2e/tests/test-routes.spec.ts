@@ -3,6 +3,8 @@ import test from '@playwright/test'
 test.describe('Routes', () => {
 	test('end-to-end', async ({ page }) => {
 		await page.goto('http://localhost:5420/end-to-end')
+		await page.waitForTimeout(3000);
+		await page.screenshot({ path: 'screenshot.png' });
 		await page.waitForSelector('.tl-canvas')
 	})
 
