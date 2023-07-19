@@ -54,6 +54,16 @@ jobs:
           path: apps/examples/playwright-report
           retention-days: 30
 
+      - run: cd apps/examples && ls -alR;
+        if: always()
+
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: screenshots
+          path: apps/examples/scr
+          retention-days: 30
+
       - uses: shallwefootball/s3-upload-action@master
         if: always()
         name: Upload S3

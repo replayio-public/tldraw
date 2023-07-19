@@ -30,7 +30,7 @@
 		"dev": "concurrently \"vite\" \"HOST=localhost PORT=1234 npx y-websocket\" --kill-others",
 		"build": "vite build",
 		"lint": "yarn run -T tsx ../../scripts/lint.ts",
-		"e2e": "playwright test -c ./e2e/playwright.config.ts",
+		"e2e": "DEBUG=pw:api playwright test -c ./e2e/playwright.config.ts",
 		"e2e-ui": "playwright test --ui -c ./e2e/playwright.config.ts"
 	},
 	"dependencies": {
